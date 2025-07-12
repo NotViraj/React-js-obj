@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- React and Babel CDNs -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to my garage</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class Garage extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    car1: "Thar",
+                    car2: "Scorpio",
+                    car3: "Fortuner",
+                    car4: "Range Rover"
+                };
+            }
+
+            changecar = () => {
+                this.setState({ car4: "Endavour" });
+                
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h2>Car garage</h2>
+                        <p>First car: {this.state.car1}</p>
+                        <p>Second Car: {this.state.car2}</p>
+                        <p>Third Car: {this.state.car3}</p>
+                        <p>Fourth Car: {this.state.car4}</p>
+                        <button onClick={this.changecar}>Click Me!</button>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<Garage />, document.getElementById('root'));
+    </script>
+</body>
+</html>
