@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- React and Babel CDNs -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to my page</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        class AbtMe extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    name: "Viraj Singh",
+                    age: 15,
+                    hobby: "Coding",
+                    city: "Delhi"
+                };
+            }
+
+            render() {
+                return (
+                    <div>
+                        <h2>About Me</h2>
+                        <p>Name: {this.state.name}</p>
+                        <p>Age: {this.state.age}</p>
+                        <p>Hobby: {this.state.hobby}</p>
+                        <p>City: {this.state.city}</p>
+                    </div>
+                );
+            }
+        }
+
+        ReactDOM.render(<AbtMe />, document.getElementById('root'));
+    </script>
+</body>
+</html>
